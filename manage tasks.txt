@@ -1,0 +1,138 @@
+# برنامه مدیریت وظایف با استفاده از Python
+
+tasks = []
+
+def add_task(task):
+    tasks.append(task)
+
+def remove_task(task):
+    tasks.remove(task)
+
+def view_tasks():
+    print("لیست وظایف:")
+    for task in tasks:
+        print("- " + task)
+
+if __name__ == "__main__":
+    while True:
+        print("\nانتخاب کنید:")
+        print("1. اضافه کردن وظیفه")
+        print("2. حذف وظیفه")
+        print("3. مشاهده وظایف")
+        print("4. خروج")
+
+        choice = input("انتخاب: ")
+
+        if choice == "1":
+            task = input("وظیفه جدید: ")
+            add_task(task)
+        elif choice == "2":
+            task = input("وظیفه حذف شده: ")
+            remove_task(task)
+        elif choice == "3":
+            view_tasks()
+        elif choice == "4":
+            break
+        else:
+            print("انتخاب نامعتبر!")
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class TaskManager {
+    private static ArrayList<String> tasks = new ArrayList<>();
+
+    public static void addTask(String task) {
+        tasks.add(task);
+    }
+
+    public static void removeTask(String task) {
+        tasks.remove(task);
+    }
+
+    public static void viewTasks() {
+        System.out.println("لیست وظایف:");
+        for (String task : tasks) {
+            System.out.println("- " + task);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nانتخاب کنید:");
+            System.out.println("1. اضافه کردن وظیفه");
+            System.out.println("2. حذف وظیفه");
+            System.out.println("3. مشاهده وظایف");
+            System.out.println("4. خروج");
+
+            String choice = scanner.nextLine();
+
+            if (choice.equals("1")) {
+                System.out.print("وظیفه جدید: ");
+                String task = scanner.nextLine();
+                addTask(task);
+            } else if (choice.equals("2")) {
+                System.out.print("وظیفه حذف شده: ");
+                String task = scanner.nextLine();
+                removeTask(task);
+            } else if (choice.equals("3")) {
+                viewTasks();
+            } else if (choice.equals("4")) {
+                break;
+            } else {
+                System.out.println("انتخاب نامعتبر!");
+            }
+        }
+    }
+}
+<?php
+// برنامه مدیریت وظایف با استفاده از PHP
+
+$tasks = [];
+
+function add_task($task) {
+    global $tasks;
+    $tasks[] = $task;
+}
+
+function remove_task($task) {
+    global $tasks;
+    $key = array_search($task, $tasks);
+    if ($key !== false) {
+        unset($tasks[$key]);
+    }
+}
+
+function view_tasks() {
+    global $tasks;
+    echo "لیست وظایف:\n";
+    foreach ($tasks as $task) {
+        echo "- $task\n";
+    }
+}
+
+while (true) {
+    echo "\nانتخاب کنید:\n";
+    echo "1. اضافه کردن وظیفه\n";
+    echo "2. حذف وظیفه\n";
+    echo "3. مشاهده وظایف\n";
+    echo "4. خروج\n";
+
+    $choice = readline("انتخاب: ");
+
+    if ($choice === "1") {
+        $task = readline("وظیفه جدید: ");
+        add_task($task);
+    } elseif ($choice === "2") {
+        $task = readline("وظیفه حذف شده: ");
+        remove_task($task);
+    } elseif ($choice === "3") {
+        view_tasks();
+    } elseif ($choice === "4") {
+        break;
+    } else {
+        echo "انتخاب نامعتبر!\n";
+    }
+}
+?>
